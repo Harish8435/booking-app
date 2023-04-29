@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #6d6cf4;
+  --muted-color: #b0b0b0;
+  --icon-font-size-lg: 2rem;
+  --icon-font-size-sm: 1.6rem;
+  --text-font-size-lg: 1.4rem;
+  --text-font-size-sm: 1.1rem;
+  --common-border-radius: 20px;
+  --common-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+.ant-progress-line,
+input,
+input::placeholder {
+  font-size: var(--text-font-size-lg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.primary-color {
+  color: var(--primary-color);
+}
+
+.system-default-icon {
+  font-size: var(--icon-font-size-lg);
+  transition: all 0.4s !important;
+  cursor: pointer;
+}
+
+.system-default-icon:hover {
+  transform: scale(0.8) !important;
+}
+
+.customized-input {
+  border-radius: var(--common-border-radius);
+  box-shadow: var(--common-box-shadow);
+  border: none !important;
+  padding: 0.8rem;
+}
+
+.customized-card {
+  border-radius: var(--common-border-radius);
+  box-shadow: var(--common-box-shadow);
+  border: none !important;
+  padding: 1rem 1.8rem !important;
+}
+
+.colored-text {
+  color: var(--primary-color);
+}
+
+.muted-text {
+  color: var(--muted-color);
+}
+
+/* input,
+input::placeholder {
+  font-size: var(--text-font-size-lg);
+} */
+
+.color-muted {
+  color: var(--muted-color);
+}
+
+.group-btn {
+  border-radius: var(--common-border-radius) !important;
+  border: none !important;
+  padding: 1rem 2rem !important;
+  color: var(--muted-color);
+  font-size: var(--text-font-size-lg);
+}
+
+.group-btn:active,
+.group-btn:focus,
+.group-btn:hover {
+  background-color: var(--primary-color);
+  box-shadow: var(--common-box-shadow);
+  color: white !important;
+}
+
+.profile-img {
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 50%;
+}
+
+.ant-progress-bg {
+  height: 13px !important;
+  background-color: var(--primary-color) !important;
+}
+
+.ant-checkbox-wrapper {
+  transform: scale(1.6);
+}
+
+.check-in-cb {
+  padding-left: 1.24rem;
+}
+
+.check-out-cb {
+  padding-right: 0.9rem;
+}
+
+@media screen and (max-width: 770px) {
+  body,
+  .system-default-icon,
+  input,
+  input::placeholder,
+  .ant-progress-line {
+    font-size: var(--text-font-size-sm);
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  /* .system-default-icon {
+    font-size: var(--icon-font-size-sm);
   }
-  to {
-    transform: rotate(360deg);
+
+  input,
+  input::placeholder {
+    font-size: var(--text-font-size-sm);
+  } */
+
+  .group-btn {
+    font-size: var(--text-font-size-sm);
+    padding: 0.8rem 1.4rem !important;
+  }
+
+  .profile-img {
+    height: 2.6rem;
+    width: 2.6rem;
+  }
+
+  /* .ant-progress-line{
+    font-size: var(--text-font-size-sm);
+  } */
+
+  .ant-checkbox-wrapper {
+    transform: scale(1.2);
+  }
+
+  .check-in-cb {
+    padding-left: 0.52rem;
+  }
+
+  .check-out-cb {
+    padding-right: 0rem;
   }
 }
