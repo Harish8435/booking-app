@@ -4,8 +4,9 @@
   --icon-font-size-lg: 2rem;
   --icon-font-size-sm: 1.6rem;
   --text-font-size-lg: 1.4rem;
-  --text-font-size-sm: 1.1rem;
-  --common-border-radius: 20px;
+  --text-font-size-md: 1.1rem;
+  --text-font-size-sm: 0.8rem;
+  --common-border-radius: 18px;
   --common-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -13,7 +14,7 @@ body,
 .ant-progress-line,
 input,
 input::placeholder {
-  font-size: var(--text-font-size-lg);
+  font-size: var(--text-font-size-lg) !important;
 }
 
 .primary-color {
@@ -27,7 +28,16 @@ input::placeholder {
 }
 
 .system-default-icon:hover {
-  transform: scale(0.8) !important;
+  transform: scale(1.2) !important;
+}
+
+.app-icons {
+  transition: all 0.4s !important;
+  cursor: pointer;
+}
+
+.app-icons:hover {
+  transform: scale(1.2) !important;
 }
 
 .customized-input {
@@ -44,6 +54,12 @@ input::placeholder {
   padding: 1rem 1.8rem !important;
 }
 
+.upcoming_tag {
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: var(--common-border-radius);
+}
+
 .colored-text {
   color: var(--primary-color);
 }
@@ -51,11 +67,6 @@ input::placeholder {
 .muted-text {
   color: var(--muted-color);
 }
-
-/* input,
-input::placeholder {
-  font-size: var(--text-font-size-lg);
-} */
 
 .color-muted {
   color: var(--muted-color);
@@ -77,6 +88,18 @@ input::placeholder {
   color: white !important;
 }
 
+.active_btn {
+  background-color: var(--primary-color);
+  box-shadow: var(--common-box-shadow);
+  color: white !important;
+}
+
+.group-btn-active {
+  background-color: var(--primary-color);
+  box-shadow: var(--common-box-shadow);
+  color: white !important;
+}
+
 .profile-img {
   height: 3.6rem;
   width: 3.6rem;
@@ -84,7 +107,7 @@ input::placeholder {
 }
 
 .ant-progress-bg {
-  height: 13px !important;
+  height: 0.9rem !important;
   background-color: var(--primary-color) !important;
 }
 
@@ -106,20 +129,11 @@ input::placeholder {
   input,
   input::placeholder,
   .ant-progress-line {
-    font-size: var(--text-font-size-sm);
+    font-size: var(--text-font-size-md) !important;
   }
-
-  /* .system-default-icon {
-    font-size: var(--icon-font-size-sm);
-  }
-
-  input,
-  input::placeholder {
-    font-size: var(--text-font-size-sm);
-  } */
 
   .group-btn {
-    font-size: var(--text-font-size-sm);
+    font-size: var(--text-font-size-md);
     padding: 0.8rem 1.4rem !important;
   }
 
@@ -128,12 +142,52 @@ input::placeholder {
     width: 2.6rem;
   }
 
-  /* .ant-progress-line{
-    font-size: var(--text-font-size-sm);
-  } */
+  .ant-progress-bg {
+    height: 0.7rem !important;
+  }
 
   .ant-checkbox-wrapper {
     transform: scale(1.2);
+  }
+
+  .check-in-cb {
+    padding-left: 0.52rem;
+  }
+
+  .check-out-cb {
+    padding-right: 0rem;
+  }
+
+  .upcoming_tag {
+    border-radius: 12px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body,
+  .system-default-icon,
+  input,
+  input::placeholder,
+  .ant-progress-line {
+    font-size: var(--text-font-size-sm) !important;
+  }
+
+  .group-btn {
+    font-size: var(--text-font-size-sm);
+    padding: 0.5rem 1rem !important;
+  }
+
+  .customized-card {
+    padding: 0.6rem 0.8rem !important;
+  }
+
+  .profile-img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .ant-checkbox-wrapper {
+    transform: scale(1);
   }
 
   .check-in-cb {
