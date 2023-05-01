@@ -43,7 +43,7 @@ function App() {
       <header className="App-header p-4">
         <div className="d-flex align-items-center justify-content-between">
           <i className="bi bi-chevron-left system-default-icon"></i>
-          <div>Bookings</div>
+          <h3>Bookings</h3>
           <Tooltip title="Notifications">
             <i className="bi bi-bell system-default-icon primary-color"></i>
           </Tooltip>
