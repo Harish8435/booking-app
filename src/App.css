@@ -2,7 +2,8 @@
   --primary-color: #6d6cf4;
   --muted-color: #b0b0b0;
   --icon-font-size-lg: 2rem;
-  --icon-font-size-sm: 1.6rem;
+  --icon-font-size-md: 1.6rem;
+  --icon-font-size-sm: 1rem;
   --text-font-size-lg: 1.4rem;
   --text-font-size-md: 1.1rem;
   --text-font-size-sm: 0.8rem;
@@ -47,6 +48,34 @@ input::placeholder {
   padding: 0.8rem;
 }
 
+.ant-picker .ant-picker-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.ant-picker .ant-picker-suffix {
+  font-size: 1.5rem !important;
+  margin-right: 0.8rem;
+}
+
+.colored-text .ant-picker .ant-picker-input > input {
+  color: var(--primary-color) !important;
+}
+
+.colored-text .ant-picker .ant-picker-suffix {
+  color: var(--primary-color) !important;
+}
+
+.color-muted .ant-picker .ant-picker-input > input {
+  color: var(--muted-color) !important;
+}
+
+.color-muted .ant-picker .ant-picker-suffix {
+  color: var(--muted-color) !important;
+}
+
 .customized-card {
   border-radius: var(--common-border-radius);
   box-shadow: var(--common-box-shadow);
@@ -61,11 +90,7 @@ input::placeholder {
 }
 
 .colored-text {
-  color: var(--primary-color);
-}
-
-.muted-text {
-  color: var(--muted-color);
+  color: var(--primary-color) !important;
 }
 
 .color-muted {
@@ -125,11 +150,14 @@ input::placeholder {
 
 @media screen and (max-width: 770px) {
   body,
-  .system-default-icon,
   input,
   input::placeholder,
   .ant-progress-line {
     font-size: var(--text-font-size-md) !important;
+  }
+
+  .system-default-icon {
+    font-size: var(--icon-font-size-md);
   }
 
   .group-btn {
@@ -161,15 +189,27 @@ input::placeholder {
   .upcoming_tag {
     border-radius: 12px !important;
   }
+
+  .ant-picker .ant-picker-suffix {
+    font-size: 1rem !important;
+    margin-right: 0.3rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
   body,
-  .system-default-icon,
   input,
   input::placeholder,
   .ant-progress-line {
     font-size: var(--text-font-size-sm) !important;
+  }
+
+  .system-default-icon {
+    font-size: var(--icon-font-size-sm);
+  }
+
+  .customized-input {
+    padding: 0.6rem 0.5rem !important;
   }
 
   .group-btn {
@@ -187,14 +227,19 @@ input::placeholder {
   }
 
   .ant-checkbox-wrapper {
-    transform: scale(1);
+    transform: scale(0.9);
   }
 
   .check-in-cb {
-    padding-left: 0.52rem;
+    padding-left: 0rem;
   }
 
   .check-out-cb {
     padding-right: 0rem;
+  }
+
+  .ant-picker .ant-picker-suffix {
+    font-size: 0.8rem !important;
+    margin-right: 0.3rem;
   }
 }

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Input, Progress, Checkbox, Tooltip } from "antd";
+import { Input, Progress, Checkbox, Tooltip, DatePicker } from "antd";
+import dayjs from "dayjs";
+
+/** Manually entering any of the following formats will perform date parsing */
+const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY", "DD-MM-YYYY", "DD-MM-YY"];
 
 function App() {
   const [bookingDetails, setBookingDetails] = useState([]);
@@ -63,19 +67,25 @@ function App() {
 
       <div className="customized-card d-flex align-items-center justify-content-between my-4">
         <div className="colored-text">
-          <Tooltip title="Calendar">
-            <i className="bi bi-calendar-event"></i>
-          </Tooltip>
-          <span className="ms-md-3 ms-2">{startDate}</span>
+          <DatePicker
+            defaultValue={dayjs(startDate, dateFormatList[0])}
+            format={dateFormatList}
+            bordered={false}
+            placeholder="Start Date"
+            className="colored-text p-0"
+          />
         </div>
         <div>
           <i className="bi bi-arrow-right system-default-icon"></i>
         </div>
-        <div className="colored-text">
-          <Tooltip title="Calendar">
-            <i className="bi bi-calendar-event"></i>
-          </Tooltip>
-          <span className="ms-md-3 ms-2">{endDate}</span>
+        <div className="colored-text d-flex align-items-center">
+          <DatePicker
+            defaultValue={dayjs(endDate, dateFormatList[0])}
+            format={dateFormatList}
+            bordered={false}
+            placeholder="End Date"
+            className="colored-text p-0"
+          />
           <Tooltip title="Slider">
             <i className="bi bi-sliders system-default-icon mx-2 color-muted"></i>
           </Tooltip>
@@ -142,19 +152,23 @@ function App() {
 
             <div className="d-flex align-items-center justify-content-between my-4">
               <div className="color-muted">
-                <Tooltip title="Calendar">
-                  <i className="bi bi-calendar-event app-icons"></i>
-                </Tooltip>
-                <span className="ms-3">{data.start_date}</span>
+                <DatePicker
+                  defaultValue={dayjs(data.start_date, dateFormatList[0])}
+                  format={dateFormatList}
+                  bordered={false}
+                  className="colored-text p-0"
+                />
               </div>
               <div>
                 <i className="bi bi-arrow-right system-default-icon app-icons"></i>
               </div>
               <div className="colored-text">
-                <Tooltip title="Calendar">
-                  <i className="bi bi-calendar-event app-icons"></i>
-                </Tooltip>
-                <span className="ms-3">{data.end_date}</span>
+                <DatePicker
+                  defaultValue={dayjs(data.end_date, dateFormatList[0])}
+                  format={dateFormatList}
+                  bordered={false}
+                  className="colored-text p-0"
+                />
               </div>
             </div>
 
@@ -174,12 +188,15 @@ function App() {
             </div>
 
             <div className="d-flex align-items-center justify-content-between my-4">
-              <Checkbox
-                className="check-in-cb"
-                checked={data.status === "checked_in" ? true : false}
-              >
-                Check-In
-              </Checkbox>
+              {data.status === "checked_in" ? (
+                <Tooltip title="Checked In">
+                  <Checkbox className="check-in-cb" checked={true}>
+                    Check-In
+                  </Checkbox>
+                </Tooltip>
+              ) : (
+                <Checkbox className="check-in-cb">Check-In</Checkbox>
+              )}
               <Checkbox className="check-out-cb">Check-Out</Checkbox>
             </div>
           </div>
